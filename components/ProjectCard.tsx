@@ -1,0 +1,119 @@
+import type { Repo } from "@/lib/github";
+import { ExternalLink, Github, Star } from "./icons";
+
+const LANGUAGE_COLORS: Record<string, string> = {
+  TypeScript: "#3178c6",
+  JavaScript: "#f1e05a",
+  Python: "#3572A5",
+  HTML: "#e34c26",
+  CSS: "#563d7c",
+  Go: "#00ADD8",
+  Rust: "#dea584",
+  Java: "#b07219",
+  Shell: "#89e051",
+};
+
+export function ProjectCard({
+  repo,
+  featured = false,
+}: {
+  repo: Repo;
+  featured?: boolean;
+}) {
+  return (
+    <article
+      className={`group relative flex flex-col rounded-2xl border border-border bg-card p-6 transition hover:border-accent hover:-translate-y-1 ${
+        featured ? "sm:p-8" : ""
+      }`}
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          <h3
+            className={`font-semibold tracking-tight ${
+              featured ? "text-2xl" : "text-lg"
+            }`}
+          >
+            {repo.title}
+          </h3>
+          <p className="mt-1 font-mono text-xs text-muted truncate">
+            {repo.name}
+          </p>
+        </div>
+        <div className="flex items-center gap-1.5 text-xs text-muted shrink-0">
+          {repo.stars > 0 && (
+            <span className="inline-flex items-center gap-1">
+              <Star className="h-3.5 w-3.5" />
+              {repo.stars}
+            </span>
+          )}
+        </div>
+      </div>
+
+      <p
+        className={`mt-3 text-muted leading-relaxed ${
+          featured ? "text-base" : "text-sm"
+        }`}
+      >
+        {repo.description}
+      </p>
+
+      {repo.topics.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {repo.topics.slice(0, 5).map((t) => (
+            <span
+              key={t}
+              className="rounded-full border border-border px-2 py-0.5 text-xs text-muted"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <div className="mt-auto pt-5 flex items-center justify-between text-sm">
+        <div className="flex items-center gap-2 text-muted">
+          {repo.language && (
+            <>
+              <span
+                className="h-2.5 w-2.5 rounded-full"
+                style={{
+                  backgroundColor:
+                    LANGUAGE_COLORS[repo.language] ?? "#9ca3af",
+                }}
+                aria-hidden="true"
+              />
+              <span>{repo.language}</span>
+            </>
+          )}
+        </div>
+
+        <div className="flex items-center gap-3 text-muted">
+          {repo.liveUrl && (
+            <a
+              href={repo.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 hover:text-foreground transition"
+              aria-label="Live site"
+            >
+              <ExternalLink />
+              <span>Live</span>
+            </a>
+          )}
+          {repo.htmlUrl && (
+            <a
+              href={repo.htmlUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 hover:text-foreground transition"
+              aria-label="GitHub repo"
+            >
+              <Github />
+              <span>Code</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
