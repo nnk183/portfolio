@@ -53,8 +53,8 @@ export const ABOUT = {
         emoji: "💃",
         title: "I dance.",
         body: "Choreography, freestyle, and the occasional reel that goes harder than it should.",
-        linkLabel: "@yourhandle",
-        linkUrl: "https://instagram.com/yourhandle",
+        linkLabel: "@narenkris",
+        linkUrl: "https://instagram.com/narenkris",
       },
       {
         emoji: "✈️",
@@ -71,7 +71,7 @@ export const ABOUT = {
   hero: {
     // Optional: set photoSrc to "/me.jpg" (or any path under /public) to show an avatar in the hero.
     // Leave blank ("") to keep it text-only.
-    photoSrc: "",
+    photoSrc: "/me.jpg",
     photoAlt: "Naren Krishna",
   },
   links: {
