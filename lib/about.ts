@@ -22,7 +22,7 @@ export const ABOUT = {
   ambiguity: {
     heading: "How I think in ambiguity",
     intro:
-      "I run on a Rumsfeld matrix — known unknowns versus unknown unknowns — paired with a decision framework that's served me well across product, ops, and AI work:",
+      "I run on a Rumsfeld matrix, known unknowns versus unknown unknowns, paired with a decision framework that's served me well across product, ops, and AI work:",
     steps: [
       {
         title: "Map what you know and don't know.",
@@ -46,8 +46,34 @@ export const ABOUT = {
       },
     ],
   },
-  career:
-    "Currently leading Product Operations and Customer Care Strategy at EarnIn (12M+ users, consumer fintech). Previously 3 years at Meta shipping 100+ products across Creator Monetization (~8% of revenue). Before that: Apple (capital planning), Deloitte (strategy + ops, 5 years). MBA from IIM Lucknow. CS from IIT Madras.",
+  personal: {
+    heading: "Off the keyboard",
+    items: [
+      {
+        emoji: "💃",
+        title: "I dance.",
+        body: "Choreography, freestyle, and the occasional reel that goes harder than it should.",
+        linkLabel: "@yourhandle",
+        linkUrl: "https://instagram.com/yourhandle",
+      },
+      {
+        emoji: "✈️",
+        title: "I'm a student pilot.",
+        body: "Training is currently paused, but the logbook is open. Single-engine, VFR.",
+      },
+      {
+        emoji: "🛠️",
+        title: "I build with Claude Code.",
+        body: "Most of the projects below are weekend agentic builds. Claude Code is my second hand.",
+      },
+    ],
+  },
+  hero: {
+    // Optional: set photoSrc to "/me.jpg" (or any path under /public) to show an avatar in the hero.
+    // Leave blank ("") to keep it text-only.
+    photoSrc: "",
+    photoAlt: "Naren Krishna",
+  },
   links: {
     github: "https://github.com/nnk183",
     email: "naren.krishna@iiml.org",

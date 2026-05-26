@@ -1,56 +1,89 @@
+import Image from "next/image";
 import { ABOUT } from "@/lib/about";
 import { Github, Mail, Linkedin, Twitter, FileText } from "./icons";
+import { CompanyStrip } from "./CompanyStrip";
 
 export function About() {
   const links = ABOUT.links;
+  const photo = ABOUT.hero.photoSrc;
   return (
-    <section className="pt-20 pb-16 sm:pt-28 sm:pb-20">
-      <div className="text-sm text-muted mb-4 font-mono">hi, i&apos;m</div>
-      <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight">
-        {ABOUT.name}
-      </h1>
-      <p className="mt-3 text-xl sm:text-2xl text-muted">{ABOUT.tagline}</p>
+    <section className="relative pt-20 pb-16 sm:pt-28 sm:pb-20">
+      {/* soft gradient blob behind the hero */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 -left-32 h-[28rem] w-[28rem] rounded-full opacity-40 blur-3xl"
+        style={{
+          background:
+            "radial-gradient(closest-side, var(--accent-soft), transparent)",
+        }}
+      />
 
-      <p className="mt-8 max-w-2xl text-lg sm:text-xl leading-relaxed">
-        {ABOUT.passion}
-      </p>
+      <div className="relative">
+        <div className="flex items-center gap-5">
+          {photo && (
+            <Image
+              src={photo}
+              alt={ABOUT.hero.photoAlt}
+              width={72}
+              height={72}
+              className="h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover border border-border"
+              priority
+            />
+          )}
+          <div>
+            <div className="text-sm text-muted font-mono">hi, i&apos;m</div>
+            <h1 className="text-5xl sm:text-7xl font-semibold tracking-tight leading-[1.05]">
+              {ABOUT.name}
+            </h1>
+          </div>
+        </div>
 
-      <div className="mt-7 flex flex-wrap gap-3">
-        {links.github && (
-          <LinkBadge href={links.github} icon={<Github />} label="GitHub" />
-        )}
-        {links.email && (
-          <LinkBadge
-            href={`mailto:${links.email}`}
-            icon={<Mail />}
-            label="Email"
-          />
-        )}
-        {links.linkedin && (
-          <LinkBadge
-            href={links.linkedin}
-            icon={<Linkedin />}
-            label="LinkedIn"
-          />
-        )}
-        {links.twitter && (
-          <LinkBadge href={links.twitter} icon={<Twitter />} label="Twitter" />
-        )}
-        {links.resume && (
-          <LinkBadge href={links.resume} icon={<FileText />} label="Resume" />
-        )}
+        <p className="mt-5 text-xl sm:text-3xl text-muted tracking-tight">
+          {ABOUT.tagline}
+        </p>
+
+        <p className="mt-8 max-w-2xl text-lg sm:text-xl leading-relaxed">
+          {ABOUT.passion}
+        </p>
+
+        <div className="mt-7 flex flex-wrap gap-3">
+          {links.github && (
+            <LinkBadge href={links.github} icon={<Github />} label="GitHub" />
+          )}
+          {links.email && (
+            <LinkBadge
+              href={`mailto:${links.email}`}
+              icon={<Mail />}
+              label="Email"
+            />
+          )}
+          {links.linkedin && (
+            <LinkBadge
+              href={links.linkedin}
+              icon={<Linkedin />}
+              label="LinkedIn"
+            />
+          )}
+          {links.twitter && (
+            <LinkBadge href={links.twitter} icon={<Twitter />} label="Twitter" />
+          )}
+          {links.resume && (
+            <LinkBadge href={links.resume} icon={<FileText />} label="Resume" />
+          )}
+        </div>
       </div>
 
+      <CompanyStrip />
       <Pillars />
       <Ambiguity />
-      <Career />
+      <Personal />
     </section>
   );
 }
 
 function Pillars() {
   return (
-    <div className="mt-16">
+    <div className="mt-20">
       <div className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
         What people say about me
       </div>
@@ -58,17 +91,13 @@ function Pillars() {
         {ABOUT.pillars.map((p, i) => (
           <div
             key={i}
-            className="rounded-2xl border border-border bg-card p-6"
+            className="rounded-2xl border border-border bg-card p-6 transition hover:border-accent hover:-translate-y-0.5"
           >
-            <div className="font-mono text-xs text-muted mb-3">
+            <div className="font-mono text-xs text-accent-warm mb-3">
               0{i + 1}
             </div>
-            <h3 className="text-lg font-semibold tracking-tight">
-              {p.title}
-            </h3>
-            <p className="mt-2 text-sm text-muted leading-relaxed">
-              {p.body}
-            </p>
+            <h3 className="text-lg font-semibold tracking-tight">{p.title}</h3>
+            <p className="mt-2 text-sm text-muted leading-relaxed">{p.body}</p>
           </div>
         ))}
       </div>
@@ -79,7 +108,7 @@ function Pillars() {
 function Ambiguity() {
   const { heading, intro, steps } = ABOUT.ambiguity;
   return (
-    <div className="mt-16 max-w-3xl">
+    <div className="mt-20 max-w-3xl">
       <div className="font-mono text-xs uppercase tracking-widest text-muted mb-4">
         {heading}
       </div>
@@ -89,7 +118,7 @@ function Ambiguity() {
       <ol className="mt-6 space-y-4">
         {steps.map((s, i) => (
           <li key={i} className="flex gap-4">
-            <span className="font-mono text-xs text-muted mt-1 shrink-0 w-6">
+            <span className="font-mono text-xs text-accent-warm mt-1 shrink-0 w-6">
               0{i + 1}
             </span>
             <div>
@@ -105,15 +134,37 @@ function Ambiguity() {
   );
 }
 
-function Career() {
+function Personal() {
+  const { heading, items } = ABOUT.personal;
   return (
-    <div className="mt-16 max-w-3xl border-l-2 border-border pl-5">
-      <div className="font-mono text-xs uppercase tracking-widest text-muted mb-2">
-        Day job & history
+    <div className="mt-20">
+      <div className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
+        {heading}
       </div>
-      <p className="text-sm sm:text-base text-muted leading-relaxed">
-        {ABOUT.career}
-      </p>
+      <div className="grid gap-4 sm:grid-cols-3">
+        {items.map((item, i) => (
+          <div
+            key={i}
+            className="rounded-2xl border border-border bg-card p-5"
+          >
+            <div className="text-2xl mb-2">{item.emoji}</div>
+            <div className="font-medium">{item.title}</div>
+            <p className="mt-1 text-sm text-muted leading-relaxed">
+              {item.body}
+            </p>
+            {"linkUrl" in item && item.linkUrl && (
+              <a
+                href={item.linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-block text-sm text-accent-warm hover:underline"
+              >
+                {item.linkLabel} →
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

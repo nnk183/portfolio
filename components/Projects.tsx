@@ -8,11 +8,16 @@ export async function Projects() {
 
   return (
     <section className="border-t border-border py-16 sm:py-20">
-      <div className="flex items-baseline justify-between">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-          Projects
-        </h2>
-        <span className="font-mono text-xs text-muted">
+      <div className="flex items-baseline justify-between gap-4">
+        <div>
+          <div className="font-mono text-xs uppercase tracking-widest text-muted mb-2">
+            Weekend builds · shipped end-to-end with Claude Code
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
+            Projects
+          </h2>
+        </div>
+        <span className="font-mono text-xs text-muted shrink-0">
           {repos.length} {repos.length === 1 ? "project" : "projects"}
         </span>
       </div>
