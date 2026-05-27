@@ -222,7 +222,7 @@ export function Books() {
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((b, i) => {
           const meta = BOOK_STATUS_META[b.status];
-          const noteLabel = b.status === "completed" ? "Took away" : "Why";
+          const noteLabel = "My take";
           return (
             <div
               key={i}
