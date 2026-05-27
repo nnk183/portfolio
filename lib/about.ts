@@ -4,10 +4,10 @@ export const ABOUT = {
   name: "Naren Krishna",
   roleTag: "Senior Product & Operations Leader · ships AI products on the side",
   cta: {
-    text: "Open to Founding Product, AI Product Lead, and Director of Product Ops roles. Bay Area or remote.",
+    text: "Roles I shine in: Product Operations · AI Product Manager · Customer Support Strategy · Deployment Strategy",
     available: true,
   },
-  tagline: "I build systems that fix things.",
+  tagline: "I build systems that fix things. I bring structure to chaos. And drama.",
   passion:
     "The thread in every job, side project, and weekend build: find the signal nobody named, ship the system that handles it, then make sure it actually lands. Docs are easy. Adoption is the work.",
   // Subheading under "How I work"
