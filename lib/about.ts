@@ -4,7 +4,7 @@ export const ABOUT = {
   name: "Naren Krishna",
   roleTag: "Senior Product & Operations Leader · ships AI products on the side",
   cta: {
-    text: "Roles I shine in: Product Operations · AI Product Manager · Customer Support Strategy · Deployment Strategy",
+    text: "Roles I shine in: Product Operations · AI Product Manager · Customer Support Strategy · Deployment Strategy · Cloud Alliance Manager",
     available: true,
   },
   tagline: "I build systems that fix things. I bring structure to chaos. And drama.",
