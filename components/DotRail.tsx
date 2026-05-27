@@ -70,10 +70,10 @@ export function DotRail() {
               }`}
             />
             <span
-              className={`font-mono text-xs whitespace-nowrap transition-all duration-200 ${
+              className={`font-mono text-xs whitespace-nowrap transition-colors duration-200 ${
                 active
-                  ? "opacity-100 translate-x-0 text-accent-warm font-medium"
-                  : "opacity-0 -translate-x-1 text-muted group-hover:opacity-100 group-hover:translate-x-0"
+                  ? "text-accent-warm font-medium"
+                  : "text-muted/60 group-hover:text-muted"
               }`}
             >
               {s.label}
