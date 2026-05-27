@@ -28,11 +28,11 @@ export type ManualProject = {
 // (unless `featured: true`, which floats it to the top in a larger card).
 export const MANUAL_PROJECTS: ManualProject[] = [
   {
-    name: "cluster",
-    title: "Cluster",
+    name: "pzle",
+    title: "pzle.day",
     description:
       "A daily 4×4 grouping puzzle with AI-themed words. Solving reveals the hidden theme behind the 16 terms and recommends one paper to read, turning the game into a daily AI literacy ritual. One Claude call per day, edge-cached for millions of plays at ~$1.50/month.",
-    liveUrl: "https://cluster-sandy.vercel.app",
+    liveUrl: "https://pzle.day",
     tags: [
       "Next.js 15",
       "Supabase",
