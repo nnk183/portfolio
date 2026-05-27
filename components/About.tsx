@@ -45,10 +45,6 @@ export function About() {
           {ABOUT.tagline}
         </p>
 
-        <p className="mt-7 max-w-2xl text-lg sm:text-xl leading-relaxed">
-          {ABOUT.passion}
-        </p>
-
         {ABOUT.cta.available && (
           <div className="mt-7 inline-flex items-start gap-3 rounded-2xl border border-accent-warm/30 bg-accent-warm/5 px-5 py-3 max-w-2xl">
             <span

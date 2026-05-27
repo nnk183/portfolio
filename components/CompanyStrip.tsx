@@ -18,8 +18,8 @@ const COMPANIES: Company[] = [
   },
   {
     name: "Meta",
+    wordmark: true,
     viewBox: "0 0 24 24",
-    path: "M12.001 4.8c-3.2 0-5.2 1.6-6.4 4 1.6-2.4 3.6-3.2 6.4-3.2 4.8 0 9.6 4.8 9.6 9.6 0 3.2-1.6 4.8-4.8 4.8-2.4 0-4-1.6-6.4-4.8-1.6-2.4-3.2-4.8-4.8-4.8s-3.2 1.6-3.2 4c0 2.4 1.6 4.8 3.2 4.8 1.6 0 2.4-.8 4-2.4l-1.6-2.4c-1.6 1.6-2.4 1.6-2.4 1.6-.8 0-1.6-1.6-1.6-2.4 0-1.6.8-2.4 1.6-2.4 1.6 0 2.4 1.6 4 4 1.6 2.4 3.2 6.4 6.4 6.4 4.8 0 6.4-3.2 6.4-6.4 0-7.2-6.4-12-11.2-12-6.4 0-9.6 4.8-9.6 9.6 0 7.2 5.6 12 9.6 12v-1.6c-3.2 0-8-4-8-10.4 0-4 2.4-8 8-8z",
   },
   {
     name: "Apple",
@@ -38,8 +38,8 @@ const COMPANIES: Company[] = [
   },
   {
     name: "Ericsson",
+    wordmark: true,
     viewBox: "0 0 24 24",
-    path: "M12.027 2.04c-.518 0-.939.42-.939.94v3.696H4.62c-.52 0-.94.42-.94.939s.42.939.94.939h6.467v3.515H4.62c-.52 0-.94.42-.94.939s.42.939.94.939h6.467v3.515H4.62c-.52 0-.94.42-.94.939s.42.939.94.939h6.467v3.696c0 .52.42.94.939.94s.939-.42.939-.94v-3.696h6.466c.52 0 .94-.42.94-.939s-.42-.939-.94-.939h-6.466v-3.515h6.466c.52 0 .94-.42.94-.939s-.42-.939-.94-.939h-6.466V8.554h6.466c.52 0 .94-.42.94-.939s-.42-.939-.94-.939h-6.466V2.98c0-.52-.42-.94-.94-.94z",
   },
 ];
 
@@ -59,9 +59,9 @@ export function CompanyStrip() {
             {c.wordmark ? (
               <span
                 className={
-                  c.name === "Deloitte"
-                    ? "text-xl font-bold tracking-tight"
-                    : "text-xl font-semibold tracking-tighter italic"
+                  c.name === "EarnIn"
+                    ? "text-xl font-semibold tracking-tighter italic"
+                    : "text-xl font-bold tracking-tight"
                 }
               >
                 {c.name}
@@ -79,11 +79,8 @@ export function CompanyStrip() {
           </div>
         ))}
       </div>
-      <p className="mt-5 text-sm text-muted max-w-2xl leading-relaxed">
-        Currently leading Product Operations and Customer Care Strategy at
-        EarnIn (12M+ users). 12 years prior across Meta (Creator Monetization,
-        ~8% of revenue), Apple, Deloitte (Strategy &amp; Operations), Microsoft,
-        and Ericsson. MBA, IIM Lucknow. CS, IIT Madras.
+      <p className="mt-5 font-mono text-xs text-muted">
+        MBA, IIM Lucknow · CS, IIT Madras
       </p>
     </div>
   );
