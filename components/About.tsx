@@ -222,6 +222,7 @@ export function Books() {
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((b, i) => {
           const meta = BOOK_STATUS_META[b.status];
+          const noteLabel = b.status === "completed" ? "Took away" : "Why";
           return (
             <div
               key={i}
@@ -235,8 +236,24 @@ export function Books() {
                 )}
                 {meta.label}
               </div>
-              <div className="mt-3 font-medium leading-snug">{b.title}</div>
+              <a
+                href={b.wikiUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-baseline gap-1 font-medium leading-snug hover:text-accent-warm transition-colors"
+              >
+                <span>{b.title}</span>
+                <span aria-hidden className="text-xs text-muted">↗</span>
+              </a>
               <div className="mt-1 text-sm text-muted">{b.author}</div>
+              {b.note && (
+                <p className="mt-3 text-sm text-muted leading-relaxed">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-accent-warm/80">
+                    {noteLabel}:
+                  </span>{" "}
+                  {b.note}
+                </p>
+              )}
             </div>
           );
         })}
