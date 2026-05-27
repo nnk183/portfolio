@@ -8,7 +8,6 @@ export function About() {
   const photo = ABOUT.hero.photoSrc;
   return (
     <section className="relative pt-20 pb-16 sm:pt-28 sm:pb-20">
-      {/* soft gradient blob behind the hero */}
       <div
         aria-hidden
         className="pointer-events-none absolute -top-32 -left-32 h-[28rem] w-[28rem] rounded-full opacity-40 blur-3xl"
@@ -24,8 +23,8 @@ export function About() {
             <Image
               src={photo}
               alt={ABOUT.hero.photoAlt}
-              width={72}
-              height={72}
+              width={80}
+              height={80}
               className="h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover border border-border"
               priority
             />
@@ -38,13 +37,27 @@ export function About() {
           </div>
         </div>
 
-        <p className="mt-5 text-xl sm:text-3xl text-muted tracking-tight">
+        <div className="mt-5 text-sm sm:text-base text-muted font-mono">
+          {ABOUT.roleTag}
+        </div>
+
+        <p className="mt-4 text-xl sm:text-3xl tracking-tight">
           {ABOUT.tagline}
         </p>
 
-        <p className="mt-8 max-w-2xl text-lg sm:text-xl leading-relaxed">
+        <p className="mt-7 max-w-2xl text-lg sm:text-xl leading-relaxed">
           {ABOUT.passion}
         </p>
+
+        {ABOUT.cta.available && (
+          <div className="mt-7 inline-flex items-start gap-3 rounded-2xl border border-accent-warm/30 bg-accent-warm/5 px-5 py-3 max-w-2xl">
+            <span
+              aria-hidden
+              className="mt-1.5 h-2 w-2 rounded-full bg-accent-warm shrink-0 animate-pulse"
+            />
+            <span className="text-sm leading-relaxed">{ABOUT.cta.text}</span>
+          </div>
+        )}
 
         <div className="mt-7 flex flex-wrap gap-3">
           {links.github && (
@@ -74,20 +87,21 @@ export function About() {
       </div>
 
       <CompanyStrip />
-      <Pillars />
-      <Ambiguity />
-      <Personal />
     </section>
   );
 }
 
-function Pillars() {
+export function HowIWork() {
   return (
-    <div className="mt-20">
+    <section className="border-t border-border py-16 sm:py-20">
       <div className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
-        What people say about me
+        How I work
       </div>
-      <div className="grid gap-6 sm:grid-cols-3">
+
+      <h3 className="text-xl sm:text-2xl font-semibold tracking-tight">
+        {ABOUT.pillarsHeading}
+      </h3>
+      <div className="mt-6 grid gap-6 sm:grid-cols-3">
         {ABOUT.pillars.map((p, i) => (
           <div
             key={i}
@@ -101,43 +115,37 @@ function Pillars() {
           </div>
         ))}
       </div>
-    </div>
-  );
-}
 
-function Ambiguity() {
-  const { heading, intro, steps } = ABOUT.ambiguity;
-  return (
-    <div className="mt-20 max-w-3xl">
-      <div className="font-mono text-xs uppercase tracking-widest text-muted mb-4">
-        {heading}
-      </div>
-      <p className="text-base sm:text-lg text-muted leading-relaxed">
-        {intro}
+      <h3 className="mt-14 text-xl sm:text-2xl font-semibold tracking-tight">
+        {ABOUT.ambiguity.heading}
+      </h3>
+      <p className="mt-3 max-w-3xl text-base text-muted leading-relaxed">
+        {ABOUT.ambiguity.intro}
       </p>
-      <ol className="mt-6 space-y-4">
-        {steps.map((s, i) => (
-          <li key={i} className="flex gap-4">
-            <span className="font-mono text-xs text-accent-warm mt-1 shrink-0 w-6">
+      <ol className="mt-6 grid gap-5 sm:grid-cols-3">
+        {ABOUT.ambiguity.steps.map((s, i) => (
+          <li
+            key={i}
+            className="rounded-2xl border border-border bg-card p-6"
+          >
+            <div className="font-mono text-xs text-accent-warm mb-3">
               0{i + 1}
-            </span>
-            <div>
-              <div className="font-medium">{s.title}</div>
-              <div className="mt-1 text-sm text-muted leading-relaxed">
-                {s.body}
-              </div>
+            </div>
+            <div className="font-medium">{s.title}</div>
+            <div className="mt-2 text-sm text-muted leading-relaxed">
+              {s.body}
             </div>
           </li>
         ))}
       </ol>
-    </div>
+    </section>
   );
 }
 
-function Personal() {
+export function Personal() {
   const { heading, items } = ABOUT.personal;
   return (
-    <div className="mt-20">
+    <section className="border-t border-border py-16 sm:py-20">
       <div className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
         {heading}
       </div>
@@ -165,7 +173,7 @@ function Personal() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

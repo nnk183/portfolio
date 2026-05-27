@@ -2,9 +2,16 @@
 
 export const ABOUT = {
   name: "Naren Krishna",
+  roleTag: "Senior Product & Operations Leader · ships AI products on the side",
+  cta: {
+    text: "Open to Founding Product, AI Product Lead, and Director of Product Ops roles. Bay Area or remote.",
+    available: true,
+  },
   tagline: "I build systems that fix things.",
   passion:
     "The thread in every job, side project, and weekend build: find the signal nobody named, ship the system that handles it, then make sure it actually lands. Docs are easy. Adoption is the work.",
+  // Subheading under "How I work"
+  pillarsHeading: "The loop I run",
   pillars: [
     {
       title: "I find signal others miss.",
@@ -20,25 +27,17 @@ export const ABOUT = {
     },
   ],
   ambiguity: {
-    heading: "How I think in ambiguity",
+    heading: "When the path is unclear",
     intro:
-      "I run on a Rumsfeld matrix, known unknowns versus unknown unknowns, paired with a decision framework that's served me well across product, ops, and AI work:",
+      "I run on a Rumsfeld matrix, known unknowns versus unknown unknowns. Three steps that survive every project:",
     steps: [
       {
         title: "Map what you know and don't know.",
         body: "Knowns, known unknowns, and the blindspots. Write them down before deciding anything.",
       },
       {
-        title: "Separate what you can control.",
-        body: "Agent trust is yours. Agent behavior is theirs. Confusing the two is how teams burn months.",
-      },
-      {
         title: "Bias toward cheap experiments.",
         body: "Test with a small cohort before any full rollout. Cheap is the point.",
-      },
-      {
-        title: "Set decision gates.",
-        body: "If X, we ship. If not, we pivot. Pre-commit so you don't argue at the gate.",
       },
       {
         title: "Measure as you go.",
@@ -63,14 +62,12 @@ export const ABOUT = {
       },
       {
         emoji: "🛠️",
-        title: "I build with Claude Code.",
-        body: "Most of the projects below are weekend agentic builds. Claude Code is my second hand.",
+        title: "I prototype with Claude Code.",
+        body: "Most weekend builds below get from idea to shipped in 1-2 sittings. The compression is real.",
       },
     ],
   },
   hero: {
-    // Optional: set photoSrc to "/me.jpg" (or any path under /public) to show an avatar in the hero.
-    // Leave blank ("") to keep it text-only.
     photoSrc: "/me.jpg",
     photoAlt: "Naren Krishna",
   },
@@ -82,3 +79,42 @@ export const ABOUT = {
     resume: "",
   },
 };
+
+// Quantified outcomes. 4-6 entries renders cleanest.
+// Order matters: strongest 2 land first.
+export const RECEIPTS: Array<{
+  metric: string;
+  label: string;
+  context: string;
+}> = [
+  {
+    metric: "$990K",
+    label: "saved per year",
+    context: "BERT + KNN ticket classifier routing customer ops at EarnIn",
+  },
+  {
+    metric: "12M+",
+    label: "users on the product I own",
+    context: "EarnIn cash advance platform, consumer fintech",
+  },
+  {
+    metric: "100+",
+    label: "Meta product launches",
+    context: "Creator Monetization portfolio, ~8% of Meta's revenue",
+  },
+  {
+    metric: "+13%",
+    label: "registrations lift",
+    context: "Proactive Care framework, EarnIn (also +5% bank connections)",
+  },
+  {
+    metric: "40h → 3h",
+    label: "payment-support TAT",
+    context: "End-to-end customer ops overhaul, Meta Payments",
+  },
+  {
+    metric: "$130M+",
+    label: "in client value at Deloitte",
+    context: "$100M/yr platform launch + $30M+ in cost savings",
+  },
+];

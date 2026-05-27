@@ -60,6 +60,22 @@ export const MANUAL_PROJECTS: ManualProject[] = [
     featured: true,
   },
   {
+    name: "social-media-pipeline",
+    title: "Social Media Pipeline",
+    description:
+      "Fully autonomous daily social-content pipeline. A scheduled n8n trigger kicks off a Mastra workflow that generates copy with Claude, synthesizes images and videos in Python, then publishes via the Publer API. Zero human touch per post. Shows breadth: not a Next.js app, runs on a private host.",
+    liveUrl: "",
+    tags: [
+      "Mastra",
+      "n8n",
+      "Claude Haiku",
+      "Python (image + video synthesis)",
+      "Publer API",
+      "Docker",
+    ],
+    language: "Python",
+  },
+  {
     name: "paper-radar",
     title: "Paper Radar",
     description:
@@ -72,22 +88,6 @@ export const MANUAL_PROJECTS: ManualProject[] = [
       "Voyage embeddings",
       "arXiv / GitHub / Semantic Scholar",
       "Recharts",
-    ],
-    language: "TypeScript",
-  },
-  {
-    name: "digital-twin",
-    title: "Digital Twin",
-    description:
-      "An AI alter-ego platform. Upload your resume, docs, and links to build a private knowledge base, then chat with an agent that represents you. Includes PII detection, per-user RLS, and an MCP server so other agents can talk to your twin.",
-    liveUrl: "https://altpro.me",
-    tags: [
-      "Next.js 16",
-      "Anthropic SDK + AI SDK v6",
-      "MCP server",
-      "Supabase Auth + RLS",
-      "pdf-parse",
-      "cheerio scraping",
     ],
     language: "TypeScript",
   },
@@ -108,20 +108,20 @@ export const MANUAL_PROJECTS: ManualProject[] = [
     language: "TypeScript",
   },
   {
-    name: "social-media-pipeline",
-    title: "Social Media Pipeline",
+    name: "digital-twin",
+    title: "Digital Twin",
     description:
-      "Fully autonomous daily social-content pipeline. A scheduled n8n trigger kicks off a Mastra workflow that generates copy with Claude, synthesizes images and videos in Python, then publishes via the Publer API. Zero human touch per post. Backend-only; runs on a private host.",
-    liveUrl: "",
+      "An AI alter-ego platform. Upload your resume, docs, and links to build a private knowledge base, then chat with an agent that represents you. Includes PII detection, per-user RLS, and an MCP server so other agents can talk to your twin.",
+    liveUrl: "https://altpro.me",
     tags: [
-      "Mastra",
-      "n8n",
-      "Claude Haiku",
-      "Python (image + video synthesis)",
-      "Publer API",
-      "Docker",
+      "Next.js 16",
+      "Anthropic SDK + AI SDK v6",
+      "MCP server",
+      "Supabase Auth + RLS",
+      "pdf-parse",
+      "cheerio scraping",
     ],
-    language: "Python",
+    language: "TypeScript",
   },
 ];
 
