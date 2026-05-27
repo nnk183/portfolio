@@ -123,11 +123,19 @@ export const MANUAL_PROJECTS: ManualProject[] = [
   },
   {
     name: "social-media-pipeline",
-    title: "Social Media Pipeline",
-    description: "",
+    title: "Social Media Content Generation Pipeline",
+    description:
+      "Fully autonomous daily social-content pipeline. A scheduled n8n trigger kicks off a Mastra workflow that generates copy with Claude, synthesizes images and videos in Python, then publishes via the Publer API. Zero human touch per post. Runs on a private host, not a Next.js app.",
     liveUrl: "",
-    language: "",
-    status: "secret",
+    tags: [
+      "Mastra",
+      "n8n",
+      "Claude Haiku",
+      "Python (image + video synthesis)",
+      "Publer API",
+      "Docker",
+    ],
+    language: "Python",
   },
 ];
 

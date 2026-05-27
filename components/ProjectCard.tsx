@@ -1,5 +1,5 @@
 import type { Repo } from "@/lib/github";
-import { ExternalLink, Github, Lock, Star } from "./icons";
+import { ExternalLink, Github, Star } from "./icons";
 
 const LANGUAGE_COLORS: Record<string, string> = {
   TypeScript: "#3178c6",
@@ -29,10 +29,6 @@ export function ProjectCard({
   repo: Repo;
   featured?: boolean;
 }) {
-  if (repo.status === "secret") {
-    return <SecretCard />;
-  }
-
   const isUpcoming = repo.status === "upcoming";
   const showLive = repo.status !== "upcoming" && repo.liveUrl;
 
@@ -162,59 +158,3 @@ export function ProjectCard({
   );
 }
 
-function SecretCard() {
-  return (
-    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-dashed border-border bg-card p-6">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(45deg, currentColor 0, currentColor 1px, transparent 1px, transparent 12px)",
-        }}
-      />
-
-      <div className="relative">
-        <div className="mb-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-border px-2.5 py-1 font-mono text-xs uppercase tracking-widest text-muted">
-          <Lock className="h-3 w-3" />
-          Stealth project
-        </div>
-
-        <h3 className="font-mono text-lg font-semibold tracking-tight">
-          ███ ████████ ████████
-        </h3>
-        <p className="mt-1 font-mono text-xs text-muted">
-          ████████-████████-████████
-        </p>
-
-        <p className="mt-3 text-sm leading-relaxed text-muted">
-          Currently in private development.{" "}
-          <span className="select-none rounded-sm bg-foreground/80 px-1 text-transparent">
-            Pipeline that touches generation, synthesis, and distribution.
-          </span>{" "}
-          Details available under NDA.
-        </p>
-
-        <div className="mt-4 flex flex-wrap gap-1.5">
-          <span className="rounded-full border border-border px-2 py-0.5 font-mono text-xs text-muted">
-            ████████
-          </span>
-          <span className="rounded-full border border-border px-2 py-0.5 font-mono text-xs text-muted">
-            ████
-          </span>
-          <span className="rounded-full border border-border px-2 py-0.5 font-mono text-xs text-muted">
-            ██████
-          </span>
-        </div>
-
-        <div className="mt-auto pt-5 flex items-center justify-between font-mono text-xs text-muted">
-          <span className="uppercase tracking-widest">// access restricted</span>
-          <span className="inline-flex items-center gap-1.5">
-            <Lock className="h-3 w-3" />
-            Private
-          </span>
-        </div>
-      </div>
-    </article>
-  );
-}
