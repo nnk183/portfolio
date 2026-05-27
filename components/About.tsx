@@ -119,7 +119,16 @@ export function HowIWork() {
         {ABOUT.ambiguity.heading}
       </h3>
       <p className="mt-3 max-w-3xl text-base text-muted leading-relaxed">
-        {ABOUT.ambiguity.intro}
+        I run on a{" "}
+        <a
+          href="https://en.wikipedia.org/wiki/There_are_known_knowns"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-foreground underline decoration-dotted underline-offset-4 hover:text-accent-warm"
+        >
+          Rumsfeld matrix
+        </a>
+        , known unknowns versus unknown unknowns. Three steps that survive every project:
       </p>
       <ol className="mt-6 grid gap-5 sm:grid-cols-3">
         {ABOUT.ambiguity.steps.map((s, i) => (
