@@ -72,13 +72,34 @@ export function ProjectCard({
         </div>
       </div>
 
-      <p
-        className={`mt-3 text-muted leading-relaxed ${
-          featured ? "text-base" : "text-sm"
-        }`}
-      >
-        {repo.description}
-      </p>
+      {repo.problem || repo.solution ? (
+        <div className={`mt-3 space-y-2.5 ${featured ? "text-base" : "text-sm"}`}>
+          {repo.problem && (
+            <p className="text-muted leading-relaxed">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-accent-warm/80">
+                Problem:
+              </span>{" "}
+              {repo.problem}
+            </p>
+          )}
+          {repo.solution && (
+            <p className="text-muted leading-relaxed">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-accent-warm/80">
+                What it is:
+              </span>{" "}
+              {repo.solution}
+            </p>
+          )}
+        </div>
+      ) : (
+        <p
+          className={`mt-3 text-muted leading-relaxed ${
+            featured ? "text-base" : "text-sm"
+          }`}
+        >
+          {repo.description}
+        </p>
+      )}
 
       {repo.topics.length > 0 && (
         <div className="mt-4 flex flex-wrap gap-1.5">

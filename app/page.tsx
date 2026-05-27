@@ -67,7 +67,7 @@ function Footer() {
         </div>
       </div>
       <div className="mt-10 text-xs text-muted font-mono">
-        © {new Date().getFullYear()} {ABOUT.name} · Built with Claude Code
+        © {new Date().getFullYear()} {ABOUT.name} · Partnered with Claude
       </div>
     </footer>
   );

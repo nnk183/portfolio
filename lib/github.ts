@@ -12,6 +12,8 @@ export type Repo = {
   name: string;
   title: string;
   description: string;
+  problem?: string;
+  solution?: string;
   htmlUrl: string | null;
   liveUrl: string | null;
   language: string | null;
@@ -46,6 +48,8 @@ export async function fetchRepos(): Promise<Repo[]> {
     name: p.name,
     title: p.title,
     description: p.description,
+    problem: p.problem,
+    solution: p.solution,
     htmlUrl: p.repoUrl ?? null,
     liveUrl: p.liveUrl,
     language: p.language ?? null,
