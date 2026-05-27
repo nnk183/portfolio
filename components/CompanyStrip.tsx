@@ -46,13 +46,21 @@ const COMPANIES: Company[] = [
 ];
 
 export function CompanyStrip() {
-  const { heading, body, credentials } = ABOUT.aboutMe;
+  const { heading, body, stack, credentials } = ABOUT.aboutMe;
   return (
     <div className="mt-14">
       <div className="font-mono text-xs uppercase tracking-widest text-muted mb-3">
         {heading}
       </div>
       <p className="max-w-2xl text-base sm:text-lg leading-relaxed">{body}</p>
+      {stack && (
+        <p className="mt-3 max-w-2xl text-sm text-muted leading-relaxed">
+          <span className="font-mono text-[10px] uppercase tracking-widest text-accent-warm/80">
+            Stack:
+          </span>{" "}
+          {stack}
+        </p>
+      )}
       <div className="mt-7 flex flex-wrap items-center gap-x-10 gap-y-6 sm:gap-x-14">
         {COMPANIES.map((c) => (
           <div

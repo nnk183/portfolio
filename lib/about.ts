@@ -10,7 +10,8 @@ export const ABOUT = {
   tagline: "I build systems that fix things. I bring structure to chaos. And drama.",
   aboutMe: {
     heading: "About me",
-    body: "I find unnamed problems and build the systems that solve them. Today at EarnIn (12M+ users). Yesterday at Meta, Apple, Deloitte, Microsoft, and Ericsson.",
+    body: "Product & Support Operations leader — 12+ years across Meta and EarnIn. I translate operational pain into product and tooling requirements, build dashboards that surface trends early, and partner with Engineering, Product, and Analytics to scale support ops. KPI frameworks and AI-powered pipelines are the lever.",
+    stack: "Hands-on with SQL (Databricks), Amplitude, Braze, Zendesk, Jira, BERT/NLP, n8n, and Claude.",
     credentials: "MBA, IIM Lucknow · CS, IIT Madras",
   },
   clients: {
