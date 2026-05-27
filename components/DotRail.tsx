@@ -24,7 +24,6 @@ export function DotRail() {
       const observer = new IntersectionObserver(
         ([entry]) => {
           visibility[s.id] = entry.intersectionRatio;
-          // Pick the section with highest visibility.
           let best = SECTIONS[0].id;
           let bestRatio = -1;
           for (const sec of SECTIONS) {
@@ -51,7 +50,7 @@ export function DotRail() {
   return (
     <nav
       aria-label="Section navigation"
-      className="hidden lg:flex fixed right-8 top-1/2 -translate-y-1/2 z-20 flex-col gap-4"
+      className="hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-30 flex-col gap-4"
     >
       {SECTIONS.map((s) => {
         const active = s.id === activeId;
@@ -59,10 +58,17 @@ export function DotRail() {
           <a
             key={s.id}
             href={`#${s.id}`}
-            className="group flex items-center justify-end gap-3"
+            className="group flex items-center gap-3"
             aria-label={s.label}
             aria-current={active ? "true" : undefined}
           >
+            <span
+              className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                active
+                  ? "bg-accent-warm scale-150"
+                  : "bg-muted/50 group-hover:bg-muted"
+              }`}
+            />
             <span
               className={`font-mono text-xs whitespace-nowrap opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 ${
                 active ? "text-accent-warm" : "text-muted"
@@ -70,13 +76,6 @@ export function DotRail() {
             >
               {s.label}
             </span>
-            <span
-              className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                active
-                  ? "bg-accent-warm scale-150"
-                  : "bg-muted/40 group-hover:bg-muted"
-              }`}
-            />
           </a>
         );
       })}
