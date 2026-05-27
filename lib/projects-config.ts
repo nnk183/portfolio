@@ -19,6 +19,9 @@ export type ManualProject = {
   language?: string;
   image?: string;
   featured?: boolean;
+  status?: "live" | "upcoming" | "secret";
+  launchDate?: string;
+  progress?: number;
 };
 
 // Add your Vercel projects here. Order in this list = order on the page
@@ -41,39 +44,7 @@ export const MANUAL_PROJECTS: ManualProject[] = [
     ],
     language: "TypeScript",
     featured: true,
-  },
-  {
-    name: "stackmap",
-    title: "StackMap",
-    description:
-      "A living architecture explorer for the AI ecosystem. Maps companies as blocks, organized into 12 layers, connected by typed wires, assembled dynamically around the solution someone is shipping. Stays alive via a five-agent pipeline (Scout, Classifier, Comparator, Synthesizer, Auditor), each with its own eval cohort.",
-    liveUrl: "https://stackmap-ten.vercel.app",
-    tags: [
-      "Multi-agent system",
-      "Anthropic SDK",
-      "Eval-driven dev",
-      "TypeScript",
-      "SVG rendering",
-      "Taxonomy design",
-    ],
-    language: "TypeScript",
-    featured: true,
-  },
-  {
-    name: "social-media-pipeline",
-    title: "Social Media Pipeline",
-    description:
-      "Fully autonomous daily social-content pipeline. A scheduled n8n trigger kicks off a Mastra workflow that generates copy with Claude, synthesizes images and videos in Python, then publishes via the Publer API. Zero human touch per post. Shows breadth: not a Next.js app, runs on a private host.",
-    liveUrl: "",
-    tags: [
-      "Mastra",
-      "n8n",
-      "Claude Haiku",
-      "Python (image + video synthesis)",
-      "Publer API",
-      "Docker",
-    ],
-    language: "Python",
+    status: "live",
   },
   {
     name: "paper-radar",
@@ -90,22 +61,27 @@ export const MANUAL_PROJECTS: ManualProject[] = [
       "Recharts",
     ],
     language: "TypeScript",
+    featured: true,
+    status: "live",
   },
   {
-    name: "nybf",
-    title: "NYBF — Not Your Best Friend",
+    name: "stackmap",
+    title: "StackMap",
     description:
-      "A companion chat product with multiple personas (Partner, Big Sibling, Friend). The interesting half is the autonomous eval loop: simulated user agents stress-test the app, a product-head agent triages findings, a dev agent writes code diffs, a QA agent re-simulates to validate, all in one command.",
-    liveUrl: "https://nybf-rho.vercel.app",
+      "A living architecture explorer for the AI ecosystem. Maps companies as blocks, organized into 12 layers, connected by typed wires, assembled dynamically around the solution someone is shipping. Stays alive via a five-agent pipeline (Scout, Classifier, Comparator, Synthesizer, Auditor), each with its own eval cohort.",
+    liveUrl: "https://stackmap-ten.vercel.app",
     tags: [
-      "Next.js 16",
-      "Supabase Auth",
-      "Multi-agent eval loop",
-      "Anthropic Claude",
-      "PWA",
-      "Web Push",
+      "Multi-agent system",
+      "Anthropic SDK",
+      "Eval-driven dev",
+      "TypeScript",
+      "SVG rendering",
+      "Taxonomy design",
     ],
     language: "TypeScript",
+    status: "upcoming",
+    launchDate: "2026-06-02",
+    progress: 90,
   },
   {
     name: "digital-twin",
@@ -122,6 +98,36 @@ export const MANUAL_PROJECTS: ManualProject[] = [
       "cheerio scraping",
     ],
     language: "TypeScript",
+    status: "upcoming",
+    launchDate: "2026-06-10",
+    progress: 75,
+  },
+  {
+    name: "nybf",
+    title: "NYBF — Not Your Best Friend",
+    description:
+      "A companion chat product with multiple personas (Partner, Big Sibling, Friend). The interesting half is the autonomous eval loop: simulated user agents stress-test the app, a product-head agent triages findings, a dev agent writes code diffs, a QA agent re-simulates to validate, all in one command.",
+    liveUrl: "https://nybf-rho.vercel.app",
+    tags: [
+      "Next.js 16",
+      "Supabase Auth",
+      "Multi-agent eval loop",
+      "Anthropic Claude",
+      "PWA",
+      "Web Push",
+    ],
+    language: "TypeScript",
+    status: "upcoming",
+    launchDate: "2026-06-30",
+    progress: 55,
+  },
+  {
+    name: "social-media-pipeline",
+    title: "Social Media Pipeline",
+    description: "",
+    liveUrl: "",
+    language: "",
+    status: "secret",
   },
 ];
 

@@ -21,6 +21,9 @@ export type Repo = {
   updatedAt: string;
   featured: boolean;
   image?: string;
+  status?: "live" | "upcoming" | "secret";
+  launchDate?: string;
+  progress?: number;
 };
 
 type GitHubRepo = {
@@ -52,6 +55,9 @@ export async function fetchRepos(): Promise<Repo[]> {
     updatedAt: new Date().toISOString(),
     featured: p.featured ?? false,
     image: p.image,
+    status: p.status,
+    launchDate: p.launchDate,
+    progress: p.progress,
   }));
 
   if (!SHOW_GITHUB_REPOS) return manual;
