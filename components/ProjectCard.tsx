@@ -45,7 +45,7 @@ export function ProjectCard({
       {isUpcoming && repo.launchDate && (
         <div className="mb-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-accent-warm/40 bg-accent-warm/10 px-2.5 py-1 font-mono text-xs uppercase tracking-widest text-accent-warm">
           <span className="h-1.5 w-1.5 rounded-full bg-accent-warm animate-pulse" />
-          Launching {formatLaunchDate(repo.launchDate)}
+          MVP · {formatLaunchDate(repo.launchDate)}
         </div>
       )}
 
