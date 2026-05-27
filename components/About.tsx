@@ -52,17 +52,7 @@ export function About() {
 
         <ClientStrip />
 
-        {ABOUT.cta.available && (
-          <div className="mt-14 inline-flex items-start gap-3 rounded-2xl border border-accent-warm/30 bg-accent-warm/5 px-5 py-3 max-w-2xl">
-            <span
-              aria-hidden
-              className="mt-1.5 h-2 w-2 rounded-full bg-accent-warm shrink-0 animate-pulse"
-            />
-            <span className="text-sm leading-relaxed">{ABOUT.cta.text}</span>
-          </div>
-        )}
-
-        <div className="mt-7 flex flex-wrap gap-3">
+        <div className="mt-14 flex flex-wrap gap-3">
           {links.email && (
             <a
               href={`mailto:${links.email}`}

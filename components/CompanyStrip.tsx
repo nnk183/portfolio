@@ -61,6 +61,15 @@ export function CompanyStrip() {
           {stack}
         </p>
       )}
+      {ABOUT.cta.available && (
+        <div className="mt-5 inline-flex items-start gap-3 rounded-2xl border border-accent-warm/30 bg-accent-warm/5 px-5 py-3 max-w-2xl">
+          <span
+            aria-hidden
+            className="mt-1.5 h-2 w-2 rounded-full bg-accent-warm shrink-0 animate-pulse"
+          />
+          <span className="text-sm leading-relaxed">{ABOUT.cta.text}</span>
+        </div>
+      )}
       <div className="mt-7 flex flex-wrap items-center gap-x-10 gap-y-6 sm:gap-x-14">
         {COMPANIES.map((c) => (
           <div
