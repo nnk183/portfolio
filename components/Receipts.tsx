@@ -2,7 +2,7 @@ import { RECEIPTS } from "@/lib/about";
 
 export function Receipts() {
   return (
-    <section className="border-t border-border py-16 sm:py-20">
+    <section id="receipts" className="border-t border-border py-16 sm:py-20 scroll-mt-8">
       <div className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
         Receipts
       </div>

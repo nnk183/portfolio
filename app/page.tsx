@@ -1,24 +1,28 @@
 import { About, HowIWork, Personal } from "@/components/About";
 import { Receipts } from "@/components/Receipts";
 import { Projects } from "@/components/Projects";
+import { DotRail } from "@/components/DotRail";
 import { ABOUT } from "@/lib/about";
 
 export default function HomePage() {
   return (
-    <main className="mx-auto w-full max-w-5xl px-6 sm:px-8">
-      <About />
-      <Receipts />
-      <Projects />
-      <HowIWork />
-      <Personal />
-      <Footer />
-    </main>
+    <>
+      <DotRail />
+      <main className="mx-auto w-full max-w-5xl px-6 sm:px-8">
+        <About />
+        <Receipts />
+        <Projects />
+        <HowIWork />
+        <Personal />
+        <Footer />
+      </main>
+    </>
   );
 }
 
 function Footer() {
   return (
-    <footer className="border-t border-border py-16">
+    <footer id="contact" className="border-t border-border py-16 scroll-mt-8">
       <div className="rounded-3xl border border-border bg-card p-8 sm:p-12">
         <div className="font-mono text-xs uppercase tracking-widest text-accent-warm mb-3">
           Let&apos;s talk

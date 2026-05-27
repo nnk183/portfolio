@@ -7,7 +7,7 @@ export function About() {
   const links = ABOUT.links;
   const photo = ABOUT.hero.photoSrc;
   return (
-    <section className="relative pt-20 pb-16 sm:pt-28 sm:pb-20">
+    <section id="top" className="relative pt-20 pb-16 sm:pt-28 sm:pb-20 scroll-mt-8">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-32 -left-32 h-[28rem] w-[28rem] rounded-full opacity-40 blur-3xl"
@@ -60,15 +60,23 @@ export function About() {
         )}
 
         <div className="mt-7 flex flex-wrap gap-3">
+          {links.email && (
+            <a
+              href={`mailto:${links.email}`}
+              className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-2.5 text-sm font-medium transition hover:opacity-90"
+            >
+              <Mail />
+              <span>Email me</span>
+            </a>
+          )}
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm transition hover:border-accent hover:-translate-y-0.5"
+          >
+            <span>Contact ↓</span>
+          </a>
           {links.github && (
             <LinkBadge href={links.github} icon={<Github />} label="GitHub" />
-          )}
-          {links.email && (
-            <LinkBadge
-              href={`mailto:${links.email}`}
-              icon={<Mail />}
-              label="Email"
-            />
           )}
           {links.linkedin && (
             <LinkBadge
@@ -93,7 +101,7 @@ export function About() {
 
 export function HowIWork() {
   return (
-    <section className="border-t border-border py-16 sm:py-20">
+    <section id="how-i-work" className="border-t border-border py-16 sm:py-20 scroll-mt-8">
       <div className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
         How I work
       </div>
@@ -145,7 +153,7 @@ export function HowIWork() {
 export function Personal() {
   const { heading, items } = ABOUT.personal;
   return (
-    <section className="border-t border-border py-16 sm:py-20">
+    <section id="personal" className="border-t border-border py-16 sm:py-20 scroll-mt-8">
       <div className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
         {heading}
       </div>

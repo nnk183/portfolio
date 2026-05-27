@@ -7,7 +7,7 @@ export async function Projects() {
   const rest = repos.filter((r) => !r.featured);
 
   return (
-    <section className="border-t border-border py-16 sm:py-20">
+    <section id="projects" className="border-t border-border py-16 sm:py-20 scroll-mt-8">
       <div className="flex items-baseline justify-between gap-4">
         <div>
           <div className="font-mono text-xs uppercase tracking-widest text-muted mb-2">
