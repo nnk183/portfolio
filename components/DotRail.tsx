@@ -8,6 +8,7 @@ const SECTIONS = [
   { id: "projects", label: "Projects" },
   { id: "how-i-work", label: "How I work" },
   { id: "personal", label: "Off the keyboard" },
+  { id: "books", label: "Bookshelf" },
   { id: "contact", label: "Contact" },
 ];
 

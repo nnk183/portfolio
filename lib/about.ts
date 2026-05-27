@@ -67,6 +67,43 @@ export const ABOUT = {
       },
     ],
   },
+  books: {
+    heading: "Books on my shelf",
+    subheading:
+      "What I've read, what I'm flipping through now, and what's queued up next.",
+    items: [
+      {
+        title: "The Secret",
+        author: "Rhonda Byrne",
+        status: "completed" as const,
+      },
+      {
+        title: "The Art of War",
+        author: "Sun Tzu",
+        status: "completed" as const,
+      },
+      {
+        title: "Screenplay",
+        author: "Syd Field",
+        status: "reading" as const,
+      },
+      {
+        title: "The Almanack of Naval Ravikant",
+        author: "Eric Jorgenson",
+        status: "planned" as const,
+      },
+      {
+        title: "Meditations",
+        author: "Marcus Aurelius",
+        status: "planned" as const,
+      },
+      {
+        title: "Man's Search for Meaning",
+        author: "Viktor Frankl",
+        status: "planned" as const,
+      },
+    ],
+  },
   hero: {
     photoSrc: "/me.jpg",
     photoAlt: "Naren Krishna",

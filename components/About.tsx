@@ -185,6 +185,65 @@ export function Personal() {
   );
 }
 
+const BOOK_STATUS_META: Record<
+  "completed" | "reading" | "planned",
+  { label: string; pillClass: string; dot: boolean }
+> = {
+  completed: {
+    label: "Read",
+    pillClass: "border-border bg-card text-muted",
+    dot: false,
+  },
+  reading: {
+    label: "Flipping pages",
+    pillClass: "border-accent-warm/40 bg-accent-warm/10 text-accent-warm",
+    dot: true,
+  },
+  planned: {
+    label: "Up next",
+    pillClass: "border-dashed border-border bg-transparent text-muted",
+    dot: false,
+  },
+};
+
+export function Books() {
+  const { heading, subheading, items } = ABOUT.books;
+  return (
+    <section id="books" className="border-t border-border py-16 sm:py-20 scroll-mt-8">
+      <div className="font-mono text-xs uppercase tracking-widest text-muted mb-2">
+        {heading}
+      </div>
+      {subheading && (
+        <p className="max-w-2xl text-muted text-sm sm:text-base leading-relaxed">
+          {subheading}
+        </p>
+      )}
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((b, i) => {
+          const meta = BOOK_STATUS_META[b.status];
+          return (
+            <div
+              key={i}
+              className="rounded-2xl border border-border bg-card p-5"
+            >
+              <div
+                className={`inline-flex w-fit items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest ${meta.pillClass}`}
+              >
+                {meta.dot && (
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent-warm animate-pulse" />
+                )}
+                {meta.label}
+              </div>
+              <div className="mt-3 font-medium leading-snug">{b.title}</div>
+              <div className="mt-1 text-sm text-muted">{b.author}</div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function LinkBadge({
   href,
   icon,

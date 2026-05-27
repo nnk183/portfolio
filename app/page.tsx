@@ -1,4 +1,4 @@
-import { About, HowIWork, Personal } from "@/components/About";
+import { About, HowIWork, Personal, Books } from "@/components/About";
 import { Receipts } from "@/components/Receipts";
 import { Projects } from "@/components/Projects";
 import { DotRail } from "@/components/DotRail";
@@ -14,6 +14,7 @@ export default function HomePage() {
         <Projects />
         <HowIWork />
         <Personal />
+        <Books />
         <Footer />
       </main>
     </>
