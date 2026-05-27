@@ -10,7 +10,7 @@ export const ABOUT = {
   tagline: "I build systems that fix things. I bring structure to chaos. And drama.",
   aboutMe: {
     heading: "About me",
-    body: "Product & Support Operations leader — 12+ years across Meta and EarnIn. I translate operational pain into product and tooling requirements, build dashboards that surface trends early, and partner with Engineering, Product, and Analytics to scale support ops. KPI frameworks and AI-powered pipelines are the lever.",
+    body: "Product & Support Operations leader, 12+ years across Meta and EarnIn. I help organizations turn any growth idea into reality. I own the launch framework that aligns EPD, Marketing, Sales, Finance, and Support on goals, positioning, and metrics. I run the planning cadences and demo forums that keep the company in step, build voice-of-customer loops from GTM and Support back into the roadmap, and shape the PM operating system — planning, tracking, decisions, and the tools PMs live in. Where AI and agents can change how product work actually gets done, that's where I push hardest.",
     stack: "Hands-on with SQL (Databricks), Amplitude, Braze, Zendesk, Jira, BERT/NLP, n8n, and Claude.",
     credentials: "MBA, IIM Lucknow · CS, IIT Madras",
   },
