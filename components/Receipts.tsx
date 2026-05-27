@@ -15,7 +15,10 @@ export function Receipts() {
       <div className="mt-10 grid gap-px bg-border rounded-2xl overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
         {RECEIPTS.map((r, i) => (
           <div key={i} className="bg-card p-6 sm:p-7">
-            <div className="text-3xl sm:text-4xl font-semibold tracking-tight text-accent-warm">
+            <div className="font-mono text-xs uppercase tracking-widest text-accent-warm">
+              {r.theme}
+            </div>
+            <div className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">
               {r.metric}
             </div>
             <div className="mt-1 text-sm font-medium">{r.label}</div>

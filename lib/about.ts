@@ -80,41 +80,48 @@ export const ABOUT = {
   },
 };
 
-// Quantified outcomes. 4-6 entries renders cleanest.
-// Order matters: strongest 2 land first.
+// Quantified outcomes mapped to six characteristics I bring.
+// Each box = one trait, anchored by one metric.
 export const RECEIPTS: Array<{
+  theme: string;
   metric: string;
   label: string;
   context: string;
 }> = [
   {
+    theme: "AI pipelines that ship",
     metric: "$990K",
     label: "saved per year",
-    context: "BERT + KNN ticket classifier routing customer ops at EarnIn",
+    context: "Voice-of-customer streamlined with a BERT + KNN ticket classifier at EarnIn",
   },
   {
+    theme: "Launch readiness at scale",
     metric: "12M+",
-    label: "users on the product I own",
-    context: "EarnIn cash advance platform, consumer fintech",
+    label: "users on the product I run",
+    context: "Shipped through a launch-readiness process I own end-to-end at EarnIn",
   },
   {
+    theme: "Fast domain ramp, high throughput",
     metric: "100+",
-    label: "Meta product launches",
-    context: "Creator Monetization portfolio, ~8% of Meta's revenue",
+    label: "Meta launches in 2 years",
+    context: "Across Integrity and Commerce — ramped each domain fast and kept the cadence",
   },
   {
+    theme: "Mastery of A/B experimentation",
     metric: "+13%",
     label: "registrations lift",
-    context: "Proactive Care framework, EarnIn (also +5% bank connections)",
+    context: "Proactive Care framework at EarnIn (also +5% bank connections)",
   },
   {
-    metric: "40h → 3h",
-    label: "payment-support TAT",
-    context: "End-to-end customer ops overhaul, Meta Payments",
+    theme: "Efficiency gains I bring in",
+    metric: "3 days → 3 hrs",
+    label: "VNF provisioning time",
+    context: "Whitebox network function automation — Deloitte engagement",
   },
   {
-    metric: "$130M+",
-    label: "in client value at Deloitte",
-    context: "$100M/yr platform launch + $30M+ in cost savings",
+    theme: "0 → 1 work I'm proud of",
+    metric: "0 → 1",
+    label: "Transactional comms on Braze",
+    context: "Set up at EarnIn across every channel — email, SMS, push, in-app",
   },
 ];
