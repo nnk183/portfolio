@@ -1,6 +1,8 @@
 // Companies are rendered as inline SVG paths so they look crisp at any size,
 // adapt to light/dark mode via currentColor, and don't require network calls.
 
+import { ABOUT } from "@/lib/about";
+
 type Company = {
   name: string;
   viewBox: string;
@@ -44,12 +46,14 @@ const COMPANIES: Company[] = [
 ];
 
 export function CompanyStrip() {
+  const { heading, body, credentials } = ABOUT.aboutMe;
   return (
-    <div className="mt-16">
-      <div className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
-        Where I&apos;ve shipped
+    <div className="mt-14">
+      <div className="font-mono text-xs uppercase tracking-widest text-muted mb-3">
+        {heading}
       </div>
-      <div className="flex flex-wrap items-center gap-x-10 gap-y-6 sm:gap-x-14">
+      <p className="max-w-2xl text-base sm:text-lg leading-relaxed">{body}</p>
+      <div className="mt-7 flex flex-wrap items-center gap-x-10 gap-y-6 sm:gap-x-14">
         {COMPANIES.map((c) => (
           <div
             key={c.name}
@@ -79,9 +83,28 @@ export function CompanyStrip() {
           </div>
         ))}
       </div>
-      <p className="mt-5 font-mono text-xs text-muted">
-        MBA, IIM Lucknow · CS, IIT Madras
-      </p>
+      <p className="mt-5 font-mono text-xs text-muted">{credentials}</p>
+    </div>
+  );
+}
+
+export function ClientStrip() {
+  const { heading, items } = ABOUT.clients;
+  return (
+    <div className="mt-14">
+      <div className="font-mono text-xs uppercase tracking-widest text-muted mb-6">
+        {heading}
+      </div>
+      <div className="flex flex-wrap items-center gap-x-10 gap-y-6 sm:gap-x-14">
+        {items.map((name) => (
+          <span
+            key={name}
+            className="text-xl font-bold tracking-tight text-muted hover:text-foreground transition-colors duration-300"
+          >
+            {name}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }

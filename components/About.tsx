@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ABOUT } from "@/lib/about";
 import { Github, Mail, Linkedin, Twitter, FileText } from "./icons";
-import { CompanyStrip } from "./CompanyStrip";
+import { CompanyStrip, ClientStrip } from "./CompanyStrip";
 
 export function About() {
   const links = ABOUT.links;
@@ -41,12 +41,19 @@ export function About() {
           {ABOUT.roleTag}
         </div>
 
-        <p className="mt-4 text-xl sm:text-3xl tracking-tight">
+        <div className="mt-10 font-mono text-xs uppercase tracking-widest text-muted mb-3">
+          TL;DR
+        </div>
+        <p className="text-xl sm:text-3xl tracking-tight">
           {ABOUT.tagline}
         </p>
 
+        <CompanyStrip />
+
+        <ClientStrip />
+
         {ABOUT.cta.available && (
-          <div className="mt-7 inline-flex items-start gap-3 rounded-2xl border border-accent-warm/30 bg-accent-warm/5 px-5 py-3 max-w-2xl">
+          <div className="mt-14 inline-flex items-start gap-3 rounded-2xl border border-accent-warm/30 bg-accent-warm/5 px-5 py-3 max-w-2xl">
             <span
               aria-hidden
               className="mt-1.5 h-2 w-2 rounded-full bg-accent-warm shrink-0 animate-pulse"
@@ -89,8 +96,6 @@ export function About() {
           )}
         </div>
       </div>
-
-      <CompanyStrip />
     </section>
   );
 }

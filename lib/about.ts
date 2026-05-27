@@ -8,6 +8,15 @@ export const ABOUT = {
     available: true,
   },
   tagline: "I build systems that fix things. I bring structure to chaos. And drama.",
+  aboutMe: {
+    heading: "About me",
+    body: "I find unnamed problems and build the systems that solve them. Today at EarnIn (12M+ users). Yesterday at Meta, Apple, Deloitte, Microsoft, and Ericsson.",
+    credentials: "MBA, IIM Lucknow · CS, IIT Madras",
+  },
+  clients: {
+    heading: "Clients I've worked with",
+    items: ["HPE", "Argo", "Cargill", "Target", "Verizon"],
+  },
   // Subheading under "How I work"
   pillarsHeading: "The loop I run",
   pillars: [
