@@ -2,7 +2,7 @@
 
 export const ABOUT = {
   name: "Naren Krishna",
-  roleTag: "Accelerator, Product Operations Champion, Ships AI Products, Student Pilot, Dancer. Ruthless Prioritizer. Team Player.",
+  roleTag: "AI-native Product Operations Lead. Ruthless Prioritizer. Team Player. First principles thinker.",
   cta: {
     text: "Roles I shine in: Product Ops · AI PM · Customer Strategy · Deployment · Cloud Alliances",
     available: true,
