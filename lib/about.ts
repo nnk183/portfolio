@@ -137,48 +137,48 @@ export const ABOUT = {
   },
 };
 
-// Quantified outcomes mapped to six characteristics I bring.
-// Each box = one trait, anchored by one metric.
+// Six frameworks I've built. Each one was reusable — the metric is just
+// the proof, not the point.
 export const RECEIPTS: Array<{
   theme: string;
-  metric: string;
-  label: string;
-  context: string;
+  name: string;
+  impact: string;
+  detail: string;
 }> = [
   {
     theme: "AI pipelines that ship",
-    metric: "$990K",
-    label: "saved per year",
-    context: "Voice-of-customer streamlined with a BERT + KNN ticket classifier at EarnIn",
+    name: "Voice of Customer Streamlined",
+    impact: "Identify opportunities faster. 4 days to realtime.",
+    detail: "BERT + KNN classifier that turns raw ticket noise into routed signal. Same pattern reusable wherever customer feedback is fragmented.",
   },
   {
     theme: "Launch readiness at scale",
-    metric: "12M+",
-    label: "users on the product I run",
-    context: "Shipped through a launch-readiness process I own end-to-end at EarnIn",
+    name: "Launch Readiness Framework",
+    impact: "End-to-end ownership from EPD alignment to GTM activation.",
+    detail: "Modular enough to ship monetization features, platform changes, and customer-facing products on the same backbone.",
   },
   {
     theme: "Fast domain ramp, high throughput",
-    metric: "100+",
-    label: "Meta launches in 2 years",
-    context: "Across Integrity and Commerce. Ramped each domain fast and kept the cadence",
+    name: "Cross-domain Ramp System",
+    impact: "Ramp into a new product domain in weeks, not quarters.",
+    detail: "Stress-tested across multiple high-stakes domains. Different problems, same playbook.",
   },
   {
     theme: "Mastery of A/B experimentation",
-    metric: "+13%",
-    label: "registrations lift",
-    context: "Proactive Care framework at EarnIn (also +5% bank connections)",
+    name: "Proactive Care Framework",
+    impact: "10% reduction at key drop-off points.",
+    detail: "Detects friction signals before users churn and routes interventions where they matter.",
   },
   {
     theme: "Efficiency gains I bring in",
-    metric: "3 days → 3 hrs",
-    label: "VNF provisioning time",
-    context: "Whitebox network function automation, Deloitte engagement",
+    name: "Whitebox VNF Automation",
+    impact: "Provisioning time: 3 days to 3 hours.",
+    detail: "Reusable automation pattern for network function spin-up. Lifted manual work out of the critical path.",
   },
   {
-    theme: "0 → 1 work I'm proud of",
-    metric: "0 → 1",
-    label: "Transactional comms on Braze",
-    context: "Set up at EarnIn across every channel: email, SMS, push, in-app",
+    theme: "0 to 1 work I'm proud of",
+    name: "Transactional Comms on Braze",
+    impact: "End-to-end setup across every channel: email, SMS, push, in-app.",
+    detail: "A zero-to-one system that other product squads still extend today.",
   },
 ];
