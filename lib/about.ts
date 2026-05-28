@@ -171,9 +171,9 @@ export const RECEIPTS: Array<{
   },
   {
     theme: "Efficiency gains I bring in",
-    name: "Whitebox VNF Automation",
-    impact: "Provisioning time: 3 days to 3 hours.",
-    detail: "Reusable automation pattern for network function spin-up. Lifted manual work out of the critical path.",
+    name: "Modular Architecture",
+    impact: "Monolithic to microservices, plug-and-play at every layer.",
+    detail: "Decompose what was a wall. Swap any component without rewriting the rest. Pattern applies wherever brittle systems live.",
   },
   {
     theme: "0 to 1 work I'm proud of",
