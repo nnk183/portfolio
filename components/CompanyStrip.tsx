@@ -46,7 +46,7 @@ const COMPANIES: Company[] = [
 ];
 
 export function CompanyStrip() {
-  const { heading, body, stack, credentials } = ABOUT.aboutMe;
+  const { heading, body, stack, companiesHeading } = ABOUT.aboutMe;
   return (
     <div className="mt-14">
       <div className="font-mono text-xs uppercase tracking-widest text-muted mb-3">
@@ -70,7 +70,10 @@ export function CompanyStrip() {
           <span className="text-sm leading-relaxed">{ABOUT.cta.text}</span>
         </div>
       )}
-      <div className="mt-7 flex flex-wrap items-center gap-x-10 gap-y-6 sm:gap-x-14">
+      <div className="mt-8 font-mono text-xs uppercase tracking-widest text-muted mb-5">
+        {companiesHeading}
+      </div>
+      <div className="flex flex-wrap items-center gap-x-10 gap-y-6 sm:gap-x-14">
         {COMPANIES.map((c) => (
           <div
             key={c.name}
@@ -100,7 +103,6 @@ export function CompanyStrip() {
           </div>
         ))}
       </div>
-      <p className="mt-5 font-mono text-xs text-muted">{credentials}</p>
     </div>
   );
 }
