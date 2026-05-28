@@ -8,6 +8,9 @@ export const ABOUT = {
     available: true,
   },
   tagline: "I build systems that fix things. I bring structure to chaos. And drama.",
+  socialDescription:
+    "AI-native Product Operations Lead. Modular frameworks, AI products shipped solo, and 12+ years of receipts from Meta, EarnIn, and Deloitte.",
+  siteUrl: "https://nnaren.pro",
   aboutMe: {
     heading: "About me",
     body: "Product & Support Operations leader, 12+ years across Meta and EarnIn. I help organizations turn any growth idea into reality. I own the launch framework that aligns EPD, Marketing, Sales, Finance, and Support on goals, positioning, and metrics. I run the planning cadences and demo forums that keep the company in step, build voice-of-customer loops from GTM and Support back into the roadmap, and shape the PM operating system: planning, tracking, decisions, and the tools PMs live in. Where AI and agents can change how product work actually gets done, that's where I push hardest.",
