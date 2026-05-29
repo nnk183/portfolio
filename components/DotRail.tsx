@@ -59,7 +59,7 @@ export function DotRail() {
           <a
             key={s.id}
             href={`#${s.id}`}
-            className="group flex items-center justify-center gap-3 p-2 md:p-0"
+            className="group flex items-center gap-3 p-2 md:p-0"
             aria-label={s.label}
             aria-current={active ? "true" : undefined}
           >
