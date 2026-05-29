@@ -91,7 +91,7 @@ export const MANUAL_PROJECTS: ManualProject[] = [
     ],
     language: "TypeScript",
     status: "upcoming",
-    launchDate: "2026-06-02",
+    launchDate: "2026-06-09",
     progress: 90,
   },
   {
@@ -113,7 +113,7 @@ export const MANUAL_PROJECTS: ManualProject[] = [
     ],
     language: "TypeScript",
     status: "upcoming",
-    launchDate: "2026-06-10",
+    launchDate: "2026-06-17",
     progress: 75,
   },
   {
