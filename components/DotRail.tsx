@@ -51,7 +51,7 @@ export function DotRail() {
   return (
     <nav
       aria-label="Section navigation"
-      className="flex fixed left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 flex-col gap-4"
+      className="fixed z-30 flex bottom-5 left-1/2 -translate-x-1/2 flex-row gap-3 rounded-full border border-muted/15 bg-background/80 px-3 py-2 backdrop-blur md:bottom-auto md:left-6 md:top-1/2 md:translate-x-0 md:-translate-y-1/2 md:flex-col md:gap-4 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:backdrop-blur-none"
     >
       {SECTIONS.map((s) => {
         const active = s.id === activeId;
