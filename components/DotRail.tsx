@@ -51,7 +51,7 @@ export function DotRail() {
   return (
     <nav
       aria-label="Section navigation"
-      className="hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-30 flex-col gap-4"
+      className="flex fixed left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 flex-col gap-4"
     >
       {SECTIONS.map((s) => {
         const active = s.id === activeId;
@@ -71,7 +71,7 @@ export function DotRail() {
               }`}
             />
             <span
-              className={`font-mono text-xs whitespace-nowrap transition-colors duration-200 ${
+              className={`hidden md:inline-block font-mono text-xs whitespace-nowrap transition-colors duration-200 ${
                 active
                   ? "text-accent-warm font-medium"
                   : "text-muted/60 group-hover:text-muted"
