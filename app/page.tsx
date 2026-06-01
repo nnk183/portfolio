@@ -1,6 +1,7 @@
 import { About, HowIWork, Personal, Books } from "@/components/About";
 import { Receipts } from "@/components/Receipts";
 import { Projects } from "@/components/Projects";
+import { Thoughts } from "@/components/Thoughts";
 import { DotRail } from "@/components/DotRail";
 import { ABOUT } from "@/lib/about";
 
@@ -13,6 +14,7 @@ export default function HomePage() {
         <Receipts />
         <Projects />
         <HowIWork />
+        <Thoughts />
         <Personal />
         <Books />
         <Footer />

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const SECTIONS = [
@@ -8,6 +7,7 @@ const SECTIONS = [
   { id: "receipts", label: "Receipts" },
   { id: "projects", label: "Projects" },
   { id: "how-i-work", label: "How I work" },
+  { id: "thoughts", label: "Thoughts" },
   { id: "personal", label: "Off the keyboard" },
   { id: "books", label: "Bookshelf" },
   { id: "contact", label: "Contact" },
@@ -83,19 +83,6 @@ export function DotRail() {
           </a>
         );
       })}
-
-      {/* Route link — leaves the homepage, so it's a hollow dot + arrow and
-          never participates in the scroll-active state above. */}
-      <Link
-        href="/thoughts"
-        className="group flex items-center gap-3 p-2 md:p-0"
-        aria-label="Thoughts"
-      >
-        <span className="h-2 w-2 rounded-full border border-muted/50 transition-all duration-300 group-hover:border-accent-warm group-hover:scale-125" />
-        <span className="hidden md:inline-block font-mono text-xs whitespace-nowrap text-muted/60 transition-colors duration-200 group-hover:text-accent-warm">
-          Thoughts ↗
-        </span>
-      </Link>
     </nav>
   );
 }
