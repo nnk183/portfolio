@@ -13,15 +13,6 @@ const LANGUAGE_COLORS: Record<string, string> = {
   Shell: "#89e051",
 };
 
-function formatLaunchDate(iso: string): string {
-  const d = new Date(`${iso}T00:00:00`);
-  return d.toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
-}
-
 export function ProjectCard({
   repo,
   featured = false,
@@ -42,13 +33,6 @@ export function ProjectCard({
           : "border-border hover:border-accent"
       }`}
     >
-      {isUpcoming && repo.launchDate && (
-        <div className="mb-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-accent-warm/40 bg-accent-warm/10 px-2.5 py-1 font-mono text-xs uppercase tracking-widest text-accent-warm">
-          <span className="h-1.5 w-1.5 rounded-full bg-accent-warm animate-pulse" />
-          MVP · {formatLaunchDate(repo.launchDate)}
-        </div>
-      )}
-
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
           <h3
@@ -111,23 +95,6 @@ export function ProjectCard({
               {t}
             </span>
           ))}
-        </div>
-      )}
-
-      {isUpcoming && repo.progress != null && (
-        <div className="mt-5">
-          <div className="flex items-baseline justify-between font-mono text-xs">
-            <span className="uppercase tracking-widest text-muted">
-              Progress
-            </span>
-            <span className="text-foreground">{repo.progress}%</span>
-          </div>
-          <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-border">
-            <div
-              className="h-full rounded-full bg-accent-warm transition-all"
-              style={{ width: `${repo.progress}%` }}
-            />
-          </div>
         </div>
       )}
 
